@@ -7,6 +7,13 @@ module.exports = {
     description: '为 Angular 组件开发场景而生的文档工具',
     logoUrl: 'https://cdn.pingcode.com/open-sources/docgeni/logo.png',
     repoUrl: 'https://github.com/docgeni/docgeni',
+    algolia: {
+        // appId: 'EQYQQ0VW2G',
+        // apiKey: 'd5ade9b542071796c2a4e9bea5e73063',
+        // indexName: 'docgeni'
+        apiKey: '25626fae796133dc1e734c6bcaaeac3c',
+        indexName: 'docsearch',
+    },
     navs: [
         null,
         {

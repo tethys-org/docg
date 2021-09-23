@@ -3,6 +3,9 @@
   <a [routerLink]="['/']" class="title">{{ global.config.title }}</a>
   <span class="description" *ngIf="global.config.description">{{ global.config.description }}</span>
 </div>
+<div class="dg-search-container" *ngIf="showSearch">
+  <input class="search" id="sidebarInputSearch" placeholder="搜索" />
+</div>
 <div class="dg-menu">
   <ng-container *ngFor="let menu of menus" class="menu-item">
     <ng-container *ngTemplateOutlet="navTemplate; context: { $implicit: menu }"></ng-container>

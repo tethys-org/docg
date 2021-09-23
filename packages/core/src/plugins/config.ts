@@ -20,7 +20,8 @@ export class ConfigPlugin implements Plugin {
                     defaultLocale: docgeni.config.defaultLocale,
                     logoUrl: docgeni.config.logoUrl,
                     repoUrl: docgeni.config.repoUrl,
-                    footer: docgeni.config.footer
+                    footer: docgeni.config.footer,
+                    algolia: docgeni.config.algolia
                 };
                 const outputConfigPath = resolve(docgeni.paths.absSiteContentPath, 'config.ts');
                 const content = toolkit.template.compile('config.hbs', {

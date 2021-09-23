@@ -1,0 +1,36 @@
+.algolia-autocomplete {
+    .ds-dropdown-menu {
+        border: none;
+        box-shadow: 0 0 24px rgba($dg-black, 0.18);
+
+        [class^='ds-dataset-'] {
+            background: $dg-white;
+            border: none;
+            .algolia-docsearch-suggestion {
+                background: $dg-white;
+            }
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
+    .algolia-docsearch-suggestion--title {
+        color: $dg-gray-800;
+    }
+
+    .algolia-docsearch-suggestion--highlight {
+        color: $dg-primary;
+    }
+    .page-wrapper-rtl & {
+        direction: rtl !important;
+    }
+
+    .ds-dropdown-menu
+        .ds-suggestion.ds-cursor
+        .algolia-docsearch-suggestion:not(.suggestion-layout-simple)
+        .algolia-docsearch-suggestion--content {
+        background-color: rgba($dg-primary, 0.05);
+    }
+}

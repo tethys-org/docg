@@ -99,4 +99,23 @@
             padding: 10px 30px;
         }
     }
+
+    .dg-search-container {
+        padding: 10px;
+        .algolia-autocomplete {
+            .ds-dropdown-menu {
+                min-width: 280px;
+            }
+        }
+
+        .search {
+            width: 260px;
+            padding: 0.532rem 10px;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            border-bottom: solid 1px $dg-gray-300;
+            -webkit-appearance: none;
+        }
+    }
 }

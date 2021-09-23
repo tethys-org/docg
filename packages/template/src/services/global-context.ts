@@ -1,6 +1,7 @@
 import { Injectable, Inject, InjectionToken } from '@angular/core';
 import { DocgeniSiteConfig, NavigationItem, DocgeniMode, HomeDocMeta } from '../interfaces/public-api';
 import { HttpClient } from '@angular/common/http';
+import docsearch from 'docsearch.js';
 import { languageCompare } from '../utils/language-compare';
 export const CONFIG_TOKEN = new InjectionToken('DOC_SITE_CONFIG');
 
@@ -26,6 +27,10 @@ export class GlobalContext {
     readonly repo: string;
     get isDefaultLocale() {
         return this.locale === this.config.defaultLocale;
+    }
+
+    get hasAlgolia() {
+        return !!(this.config.algolia && this.config.algolia.apiKey && this.config.algolia.indexName);
     }
 
     constructor(@Inject(CONFIG_TOKEN) public config: DocgeniSiteConfig, private http: HttpClient) {
@@ -91,5 +96,26 @@ export class GlobalContext {
             }
         }
         return list;
+    }
+
+    initAlgolia(searchSelector: string) {
+        if (this.hasAlgolia) {
+            const algolia = this.config.algolia.appId
+                ? {
+                      appId: this.config.algolia.appId,
+                      apiKey: this.config.algolia.apiKey,
+                      indexName: this.config.algolia.indexName
+                  }
+                : {
+                      apiKey: this.config.algolia.apiKey,
+                      indexName: this.config.algolia.indexName
+                  };
+
+            docsearch({
+                ...algolia,
+                inputSelector: searchSelector
+                // debug: true
+            });
+        }
     }
 }
