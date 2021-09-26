@@ -13,9 +13,12 @@
 
   <ng-template let-menu #navTemplate>
     <ng-container *ngIf="menu.items; else item">
-      <div class="menu-group" *ngIf="menu.items.length > 0">
-        <div class="group-header">
-          <div class="group-title" *ngIf="menu.title">{{ menu.title }}</div>
+      <div class="menu-group" *ngIf="menu.items.length > 0" [class.group-group--open]="menuDisplayMap.get(menu)">
+        <div class="group-header" (click)="toggle(menu)">
+          <div class="group-title" *ngIf="menu.title">
+            {{ menu.title }}
+          </div>
+          <div *ngIf="menu.items && menu.items.length" class="group-arrow"><dg-icon [iconName]="'angleRight'"></dg-icon></div>
         </div>
         <div class="group-body">
           <ng-container *ngFor="let menu of menu.items">

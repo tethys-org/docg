@@ -2,18 +2,40 @@
     overflow-x: hidden;
 
     .menu-group {
+        cursor: pointer;
         .group-header {
+            display: flex;
+            align-items: center;
             .group-title {
+                flex: 1 1 0;
                 padding: $dg-sidebar-menu-item-space-y 30px;
                 color: $dg-gray-600;
+                padding-right: 0;
+            }
+            .group-arrow {
+                margin-right: 30px;
+                transition: all 0.5s;
             }
         }
         .group-body {
             margin-left: $dg-sidebar-item-indent;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.5s;
         }
 
         .menu-item {
             margin-left: $dg-sidebar-item-indent;
+        }
+        &.group-group--open {
+            .group-body {
+                max-height: 4000px;
+                opacity: 1;
+            }
+            .group-arrow {
+                transform: rotate(90deg);
+            }
         }
     }
 

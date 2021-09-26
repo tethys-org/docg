@@ -83,6 +83,14 @@ const arrowRight = `<svg width="1em" height="1em" viewBox="0 0 16 16" version="1
         <path d="M7.4,4.14955232 L4.4383,7.3151 C4.2123,7.5571 3.8323,7.5691 3.5903,7.3431 C3.3483,7.1161 3.3353,6.7371 3.5623,6.4951 L7.53151194,2.2516372 C7.55538364,2.21814642 7.58305703,2.18659454 7.6145,2.1576 C7.8585,1.9336 8.2375,1.9496 8.4615,2.1946 L12.4315,6.5176 C12.6565,6.7616 12.6395,7.1416 12.3955,7.3656 C12.1515,7.5896 11.7725,7.5736 11.5475,7.3296 L8.6,4.11846621 L8.6,13.2666667 C8.6,13.6712222 8.331,14 8,14 C7.668,14 7.4,13.6712222 7.4,13.2666667 L7.4,4.14955232 Z" id="形状结合"  transform="translate(7.995013, 7.999832) rotate(90.000000) translate(-7.995013, -7.999832) "></path>
     </g>
 </svg>`;
+const angleRight = `<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>navigation/angle-right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="navigation/angle-right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M7.97815,11.49765 L7.9728,11.503 L2.2998,5.831 L3.1298,5 L7.97807731,9.84827731 L12.8255,5 L13.6565,5.831 L7.9835,11.503 L7.97815,11.49765 Z" id="形状结合" fill="#888888" transform="translate(7.978150, 8.251500) scale(-1, -1) rotate(-270.000000) translate(-7.978150, -8.251500) "></path>
+    </g>
+</svg>`;
 export const BUILTIN_SVGS = {
     github,
     code,
@@ -91,5 +99,6 @@ export const BUILTIN_SVGS = {
     check,
     list,
     arrowLeft,
-    arrowRight
+    arrowRight,
+    angleRight
 };
